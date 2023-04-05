@@ -1,0 +1,12 @@
+{
+    "CustomerNames": {
+        "1": {
+            "pk": 1,
+            "CustomerName": "Keshav",
+            "Mobile": "9848163021",
+            "City": "Kakinada",
+            "DateTime": "2022-10-28T13:11:07.373Z",
+            "UserPK": 2022
+        }
+    }
+}

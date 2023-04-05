@@ -1,0 +1,77 @@
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+</style>
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col">QrCodes Show</div>
+            <div class="col"><input id="SearchQrCodeTable" class="form-control" type="search" placeholder="Search"
+                    onkeypress="jFSearchInputKeyPress(event)" aria-label="Search" autocomplete="off"></div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover" id="myTable">
+                <thead>
+                    <tr>
+                        <th scope="col" width="5%">#</th>
+                        <th scope="col" width="20%">Customer Name</th>
+                        <th scope="col" width="15%">Mobile</th>
+                        <th scope="col" Width="15%" style="text-align:right">Total Pcs</th>
+                        <th scope="col" width="15%" style="text-align:right">Weight</th>
+                        <th scope="col" width="15%" style="text-align:right">Amounts</th>
+                        <th scope="col" width="15%"></th>
+                    </tr>
+                </thead>
+                <tbody id="KTableBody">
+                    {{#each this}}
+                    <tr data-qrcode="{{@key}}">
+                        <td>{{SNo}}</td>
+                        <td>{{CustomerName}}</td>
+                        <td>{{Mobile}}</td>
+                        <td style="text-align:right">{{GarmentPcsTotal}}</td>
+                        <td style="text-align:right">{{Weight}}</td>
+                        <td style="text-align:right">{{ShowInIndianDateFormat Amount}}</td>
+                        <td style="text-align:right"><button type="button" data-qrcode="{{key}}"
+                                class="btn btn-primary PrintButtonClass">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+                                    <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                                    <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                                  </svg>
+                            </button></td>
+                    </tr>
+                    {{/each}}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+
+        Footer
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalForQrCode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">QrCodes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="ModalBody">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="printJS('ModalBody', 'html')">Print</button>
+            </div>
+        </div>
+    </div>
+</div>

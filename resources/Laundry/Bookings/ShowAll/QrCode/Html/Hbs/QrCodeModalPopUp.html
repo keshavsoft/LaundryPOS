@@ -1,0 +1,54 @@
+{{#each this}}
+{{log this}}
+<div style="width: 100%; height: 200px;">
+    <div style="display: block; margin-left:auto; margin-right: auto; width: 50%;">{{DateTime}}</div>
+
+    <div>
+        <div style="width: 50%; float: left; height: 70px;">
+            <div class="row">
+                <div style="text-align: center;" class="col">
+                    {{QrCode}}
+                </div>
+
+            </div>
+            <div class="row">
+                <div style="text-align: center;" class="col">{{CustomerName}}</div>
+            </div>
+            <div class="row">
+                <b>
+                    <div style="text-align: center;" class="col">
+                        {{Mobile}}
+                    </div>
+                </b>
+            </div>
+            <div class="row">
+                <div style="text-align: center;" class="col">
+                    {{GarmentsName}} : {{GarmentsPcs}}/{{GarmentPcsTotal}}
+                </div>
+
+            </div>
+
+        </div>
+        <div style="margin-left: 50%; height: 70px;">
+
+            <div class="row">
+                <div style="text-align: center;" class="col">
+                    <canvas id="{{CanvasId}}" width="1" height="1" style="border:1px solid #fff;visibility:hidden"></canvas>
+                </div>
+
+            </div>
+            <div class="row">
+                <div style="text-align: center;" class="col" id="ModalGarments">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <b>
+        <div style="font-size: xx-large; text-align: center;" class="col">
+            {{BookingRef}}
+        </div>
+    </b>
+</div>
+{{/each}}

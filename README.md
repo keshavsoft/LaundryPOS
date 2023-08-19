@@ -5,7 +5,7 @@ steps before development :
 
 1.  copy the KData folder from KeshavSoft to root folder.
 
-2.  got to terminal in VS Code.
+2.  go to terminal in VS Code.
 
 3.  in the terminal tab
 
